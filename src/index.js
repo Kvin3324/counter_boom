@@ -35,19 +35,17 @@ class Counter extends React.Component {
   }
 
   inputAddValue = () => {
-    const inputAddNumberValue = document.getElementById("inputAddNumberValue");
-      this.setState((state) => {
-        return {
-          number: state.number + parseInt(inputAddNumberValue.value)
-        }
-      })
+        this.setState((state) => {
+          return {
+            number: state.number + parseInt(this.refs.inputAddNumberValue.value)
+          }
+        })
   }
 
   inputRemoveValue = () => {
     this.setState((state) => {
-      const inputRemoveNumberValue = document.getElementById("inputRemoveNumberValue");
       return {
-        number:  state.number - parseInt(inputRemoveNumberValue.value)
+        number:  state.number - parseInt(this.refs.inputRemoveNumberValue.value)
       }
     })
   }
@@ -67,9 +65,9 @@ class Counter extends React.Component {
         </div>
         <div className="input-number-value mt-5">
           <button className="add-number btn btn-primary mr-3" onClick={this.inputAddValue}> Add:</button>
-          <input type="number" id="inputAddNumberValue" size="25"></input>
+          <input type="number" ref="inputAddNumberValue" size="25"></input>
           <button className="remove--number btn btn-primary ml-5 mr-3" onClick={this.inputRemoveValue}> Remove:</button>
-          <input type="number" id="inputRemoveNumberValue" size="25"></input>
+          <input type="number" ref="inputRemoveNumberValue" size="25"></input>
         </div>
       </div>
     )
