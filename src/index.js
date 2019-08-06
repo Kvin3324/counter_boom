@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 
@@ -9,7 +9,6 @@ import * as serviceWorker from './serviceWorker';
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-
 class Counter extends React.Component {
   constructor(props) {
     super(props);
@@ -65,7 +64,7 @@ class Counter extends React.Component {
         </div>
         <div className="input-number-value mt-5">
           <button className="add-number btn btn-primary mr-3" onClick={this.inputAddValue}> Add:</button>
-          <input type="number" ref="inputAddNumberValue" size="25"></input>
+          <input type="number" ref="inputAddNumberValue" size="25" onKeyUp={this.success}></input>
           <button className="remove--number btn btn-primary ml-5 mr-3" onClick={this.inputRemoveValue}> Remove:</button>
           <input type="number" ref="inputRemoveNumberValue" size="25"></input>
         </div>
